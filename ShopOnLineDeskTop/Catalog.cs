@@ -9,6 +9,12 @@ namespace ShopOnLineDeskTop
     class Catalog
     {
         List<Product> products = new List<Product>();
+        public int Count { get { return products.Count; } }
+
+        public Product this[int ind]
+        { 
+            get { return products[ind]; }
+        }
 
         public void InitializeConstant()
         {
@@ -18,8 +24,8 @@ namespace ShopOnLineDeskTop
         }
 
         public List<Product> GetAll()
-        { 
-            return products;
+        {
+            return new List<Product>(products);
         }
     }
 }

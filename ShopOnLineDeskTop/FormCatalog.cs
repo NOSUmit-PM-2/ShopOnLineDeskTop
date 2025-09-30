@@ -21,8 +21,18 @@ namespace ShopOnLineDeskTop
         {
             Catalog catalog = new Catalog();
             catalog.InitializeConstant();
-            foreach (var product in catalog.GetAll())
-                listViewCatalog.Items.Add(new ListViewItem(product.ToArray()));
+            List<Product> temp = catalog.GetAll();
+            //foreach (var product in catalog.GetAll())
+            //    listViewCatalog.Items.Add(new ListViewItem(product.ToArray()));
+            for (int i = 0; i < temp.Count; i++)
+            {
+                listViewCatalog.Items.Add(new ListViewItem(temp[i].ToArray()));
+            }
+            for (int i = 0; i < catalog.Count; i++)
+            {
+                listViewCatalog.Items.Add(new ListViewItem(catalog[i].ToArray()));
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
