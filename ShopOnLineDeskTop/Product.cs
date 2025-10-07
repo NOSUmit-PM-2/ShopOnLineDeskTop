@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace ShopOnLineDeskTop
 {
-    class Product
+    public class Product
     {
+        static int countProduct = 0;
+        //public readonly int Id;
+        public int Id { get; }
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
 
-        public Product(string name, string description, decimal price) 
-        {  
+        public Product(string name, string description, decimal price)
+        {
+            Id = countProduct++;
             this.Name = name;
             this.Description = description;
             Price = price;
@@ -21,12 +25,12 @@ namespace ShopOnLineDeskTop
 
         public override string ToString()
         {
-            return $"Продукт {Name} ({Description}) - {Price}";
+            return $"Продукт {Id} {Name} ({Description}) - {Price}";
         }
 
         public string[] ToArray()
         {
-            return new string[] { Name, Description, Price.ToString() };
+            return new string[] { Id.ToString(), Name, Description, Price.ToString() };
         }
     }
 }

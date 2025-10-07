@@ -27,5 +27,14 @@ namespace ShopOnLineDeskTop
         {
             return new List<Product>(products);
         }
+
+        public Product GetById(int id)
+            {
+            foreach (var product in products)
+                { 
+                if (product.Id == id) return product;
+                }
+            return null;
+            }
     }
 }

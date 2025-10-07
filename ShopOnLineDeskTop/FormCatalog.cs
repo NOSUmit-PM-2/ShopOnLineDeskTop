@@ -12,6 +12,9 @@ namespace ShopOnLineDeskTop
 {
     public partial class FormCatalog : Form
     {
+        Basket basket = new Basket();
+        Catalog catalog = new Catalog();
+
         public FormCatalog()
         {
             InitializeComponent();
@@ -19,7 +22,6 @@ namespace ShopOnLineDeskTop
 
         private void FormCatalog_Load(object sender, EventArgs e)
         {
-            Catalog catalog = new Catalog();
             catalog.InitializeConstant();
             List<Product> temp = catalog.GetAll();
             //foreach (var product in catalog.GetAll())
@@ -28,16 +30,20 @@ namespace ShopOnLineDeskTop
             {
                 listViewCatalog.Items.Add(new ListViewItem(temp[i].ToArray()));
             }
-            for (int i = 0; i < catalog.Count; i++)
-            {
-                listViewCatalog.Items.Add(new ListViewItem(catalog[i].ToArray()));
-            }
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonSelectProduct_Click(object sender, EventArgs e)
         {
-           
+            int id = Convert.ToInt32(listViewCatalog.SelectedItems[0].Text);
+            //MessageBox.Show(id.ToString());
+            Product product = catalog.GetById(id);
+            basket.Add(product);
+        }
+
+        private void ToolStripMenuItemBasket_Click(object sender, EventArgs e)
+        {
+            FormBasket basketForm = new FormBasket(basket);
+            basketForm.ShowDialog();
         }
     }
 }

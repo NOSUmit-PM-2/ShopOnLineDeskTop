@@ -35,14 +35,16 @@
             this.buttonSelectProduct = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.BasketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemBasket = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.columnHeader0 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listViewCatalog
             // 
             this.listViewCatalog.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader0,
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
@@ -50,7 +52,7 @@
             this.listViewCatalog.HideSelection = false;
             this.listViewCatalog.Location = new System.Drawing.Point(38, 75);
             this.listViewCatalog.Name = "listViewCatalog";
-            this.listViewCatalog.Size = new System.Drawing.Size(282, 306);
+            this.listViewCatalog.Size = new System.Drawing.Size(336, 306);
             this.listViewCatalog.TabIndex = 0;
             this.listViewCatalog.UseCompatibleStateImageBehavior = false;
             this.listViewCatalog.View = System.Windows.Forms.View.Details;
@@ -77,7 +79,7 @@
             this.buttonSelectProduct.TabIndex = 1;
             this.buttonSelectProduct.Text = "Добавить в корзину";
             this.buttonSelectProduct.UseVisualStyleBackColor = true;
-            this.buttonSelectProduct.Click += new System.EventHandler(this.button1_Click);
+            this.buttonSelectProduct.Click += new System.EventHandler(this.buttonSelectProduct_Click);
             // 
             // label1
             // 
@@ -91,7 +93,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BasketToolStripMenuItem,
+            this.ToolStripMenuItemBasket,
             this.loginToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -99,17 +101,22 @@
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // BasketToolStripMenuItem
+            // ToolStripMenuItemBasket
             // 
-            this.BasketToolStripMenuItem.Name = "BasketToolStripMenuItem";
-            this.BasketToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.BasketToolStripMenuItem.Text = "Корзина";
+            this.ToolStripMenuItemBasket.Name = "ToolStripMenuItemBasket";
+            this.ToolStripMenuItemBasket.Size = new System.Drawing.Size(65, 20);
+            this.ToolStripMenuItemBasket.Text = "Корзина";
+            this.ToolStripMenuItemBasket.Click += new System.EventHandler(this.ToolStripMenuItemBasket_Click);
             // 
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.loginToolStripMenuItem.Text = "Войти";
+            // 
+            // columnHeader0
+            // 
+            this.columnHeader0.Text = "артикул";
             // 
             // FormCatalog
             // 
@@ -140,8 +147,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem BasketToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemBasket;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
+        private System.Windows.Forms.ColumnHeader columnHeader0;
     }
 }
 

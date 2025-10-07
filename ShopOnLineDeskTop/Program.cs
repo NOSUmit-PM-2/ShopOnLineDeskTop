@@ -16,8 +16,8 @@ namespace ShopOnLineDeskTop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FormCatalog());
-            Application.Run(new FormBasket());
+            Application.Run(new FormCatalog());
+            //Application.Run(new FormBasket());
         }
     }
 }

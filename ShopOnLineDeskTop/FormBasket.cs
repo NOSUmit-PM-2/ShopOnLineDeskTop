@@ -12,9 +12,16 @@ namespace ShopOnLineDeskTop
 {
     public partial class FormBasket : Form
     {
-        public FormBasket()
+        Basket basket;
+
+        public FormBasket(Basket basket)
         {
             InitializeComponent();
+            this.basket = basket;
+            foreach (var item in basket.GetAll())
+            {
+                dataGridBasket.Rows.Add(item.ToArray());
+            }
         }
 
         private void FormBasket_Load(object sender, EventArgs e)
@@ -30,15 +37,18 @@ namespace ShopOnLineDeskTop
 
         private void dataGridBasket_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // var button = sender as DataGridViewButtonColumn;
-            if (sender != null)
-                MessageBox.Show(sender.ToString());
-            else
-                MessageBox.Show("!!!");
-
-            if (((DataGridView)sender).Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            // увеличить количество
+            if (e.ColumnIndex == 4)
+            { 
+                int row = e.RowIndex;
+                int productId = Convert.ToInt32(dataGridBasket.Rows[row].Cells[0].Value);
+                //product
+                //product.Increase()
+            }
+                
+            //if (] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                MessageBox.Show("Нажата кнопка");
+                MessageBox.Show("");
             }
         }
     }

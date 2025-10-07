@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ShopOnLineDeskTop
 {
-    class BasketItem
+    public class BasketItem
     {
         public Product product { get; set; }
         public int count { get; set; }
@@ -19,17 +20,31 @@ namespace ShopOnLineDeskTop
 
         public string[] ToArray()
         {
-            return new string[] { product.Name, count.ToString() };
+            return new string[] {product.Id.ToString(), product.Name, product.Price.ToString(), count.ToString() };
         }
     }
 
-    class Basket
+    public class Basket
     {
         List<BasketItem> listBasketItem = new List<BasketItem>();
 
         public void Add(Product product)
         {
             listBasketItem.Add(new BasketItem(product));
+        }
+
+        public List<BasketItem> GetAll()
+        {
+            return new List<BasketItem>(listBasketItem);
+        }
+
+        public BasketItem GetById(int id)
+        {
+            foreach (var item in listBasketItem)
+            {
+                if (item.product.Id == id) return item;
+            }
+            return null;
         }
 
     }
