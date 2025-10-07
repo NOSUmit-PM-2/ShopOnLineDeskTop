@@ -1,0 +1,130 @@
+﻿namespace ShopOnLineDeskTop
+{
+    partial class FormBasket
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.dataGridBasket = new System.Windows.Forms.DataGridView();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAdd = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ColumnDecrease = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBasket)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dataGridBasket
+            // 
+            this.dataGridBasket.AllowUserToDeleteRows = false;
+            this.dataGridBasket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridBasket.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnName,
+            this.ColumnPrice,
+            this.ColumnCount,
+            this.ColumnAdd,
+            this.ColumnDecrease});
+            this.dataGridBasket.Location = new System.Drawing.Point(48, 52);
+            this.dataGridBasket.Name = "dataGridBasket";
+            this.dataGridBasket.ReadOnly = true;
+            this.dataGridBasket.Size = new System.Drawing.Size(560, 150);
+            this.dataGridBasket.TabIndex = 0;
+            this.dataGridBasket.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridBasket_CellContentClick);
+            // 
+            // ColumnName
+            // 
+            this.ColumnName.HeaderText = "Продукт";
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
+            // 
+            // ColumnPrice
+            // 
+            this.ColumnPrice.HeaderText = "Цена";
+            this.ColumnPrice.Name = "ColumnPrice";
+            this.ColumnPrice.ReadOnly = true;
+            // 
+            // ColumnCount
+            // 
+            this.ColumnCount.HeaderText = "Количество";
+            this.ColumnCount.Name = "ColumnCount";
+            this.ColumnCount.ReadOnly = true;
+            // 
+            // ColumnAdd
+            // 
+            this.ColumnAdd.HeaderText = "+";
+            this.ColumnAdd.Name = "ColumnAdd";
+            this.ColumnAdd.ReadOnly = true;
+            this.ColumnAdd.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColumnAdd.Text = "+";
+            this.ColumnAdd.ToolTipText = "Увеличить количество";
+            this.ColumnAdd.Width = 30;
+            // 
+            // ColumnDecrease
+            // 
+            this.ColumnDecrease.HeaderText = "-";
+            this.ColumnDecrease.Name = "ColumnDecrease";
+            this.ColumnDecrease.ReadOnly = true;
+            this.ColumnDecrease.Text = "-";
+            this.ColumnDecrease.ToolTipText = "Уменьшить количество";
+            this.ColumnDecrease.Width = 30;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(233, 281);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // FormBasket
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(692, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dataGridBasket);
+            this.Name = "FormBasket";
+            this.Text = "Корзина";
+            this.Load += new System.EventHandler(this.FormBasket_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBasket)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.DataGridView dataGridBasket;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCount;
+        private System.Windows.Forms.DataGridViewButtonColumn ColumnAdd;
+        private System.Windows.Forms.DataGridViewButtonColumn ColumnDecrease;
+        private System.Windows.Forms.Button button1;
+    }
+}
