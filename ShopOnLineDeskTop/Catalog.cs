@@ -55,15 +55,14 @@ namespace ShopOnLineDeskTop
         {
             if (descending)
             {
-                if (a.Price < b.Price) return -1;
-                if (a.Price == b.Price) return 0;
-                return 1;
+                //    if (a.Price < b.Price) return -1;
+                //    if (a.Price == b.Price) return 0;
+                //    return 1;
+                return a.Price.CompareTo(b.Price);
             }
             else 
             {
-                if (b.Price < a.Price) return -1;
-                if (b.Price == a.Price) return 0;
-                return 1;
+                return b.Price.CompareTo(a.Price);
             }
         }
 
@@ -71,6 +70,14 @@ namespace ShopOnLineDeskTop
         {
             var temp = new List<Product>(products);
             temp.Sort(comparer);
+            descending = !descending;
+            return temp;
+        }
+
+        public List<Product> SortByName()
+        {
+            var temp = new List<Product>(products);
+            temp.Sort((a, b) => descending ? a.Name.CompareTo(b.Name): b.Name.CompareTo(a.Name));
             descending = !descending;
             return temp;
         }

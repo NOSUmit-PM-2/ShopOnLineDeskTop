@@ -69,7 +69,9 @@ namespace ShopOnLineDeskTop
 
         private void listViewCatalog_ColumnClick(object sender, ColumnClickEventArgs e)
         {
-            showProducts(catalog.SortByPrice);
+            if (e.Column == 3) showProducts(catalog.SortByPrice);
+            if (e.Column == 1) showProducts(catalog.SortByName);
+
         }
     }
 }
