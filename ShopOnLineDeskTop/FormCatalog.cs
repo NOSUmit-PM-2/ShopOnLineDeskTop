@@ -61,13 +61,12 @@ namespace ShopOnLineDeskTop
         private void comboBoxFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<Product> temp = new List<Product>();
-            FilerFunction filerFunctionAll = catalog.GetAll;
-            FilerFunction filerFunctionLowPrice = catalog.GetLowPrice;
+            FilerFunction[] filerFunctions = {catalog.GetAll, catalog.GetLowPrice };
 
             switch (comboBoxFilters.SelectedIndex)
             {
-                case 0: temp = filerFunctionAll(); break;
-                case 1: temp = filerFunctionLowPrice(); break;
+                case 0: temp = filerFunctions[0](); break;
+                case 1: temp = filerFunctions[1](); break;
             }
             showProducts(temp);
         }
