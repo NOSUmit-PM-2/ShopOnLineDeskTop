@@ -39,6 +39,17 @@ namespace ShopOnLineDeskTop
             return temp;
         }
 
+        public List<Product> GetPhones()
+        {
+            List<Product> temp = new List<Product>();
+            foreach (Product product in products)
+            {
+                if (product.Name.Contains("Телефон"))
+                    temp.Add(product);
+            }
+            return temp;
+        }
+
         public Product GetById(int id)
             {
             foreach (var product in products)

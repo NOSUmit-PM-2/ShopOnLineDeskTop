@@ -27,7 +27,7 @@ namespace ShopOnLineDeskTop
         {
             catalog.InitializeConstant();
             // создать список фильтров
-            filerFunctions = new FilerFunction[]{catalog.GetAll, catalog.GetLowPrice };
+            filerFunctions = new FilerFunction[] { catalog.GetAll, catalog.GetLowPrice, catalog.GetPhones}; 
 
             List<Product> temp = catalog.GetAll();
             //foreach (var product in catalog.GetAll())
