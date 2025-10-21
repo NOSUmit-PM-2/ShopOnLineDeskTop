@@ -10,6 +10,7 @@ namespace ShopOnLineDeskTop
     {
         List<Product> products = new List<Product>();
         public int Count { get { return products.Count; } }
+        bool descending = false;
 
         public Product this[int ind]
         { 
@@ -47,6 +48,30 @@ namespace ShopOnLineDeskTop
                 if (product.Name.Contains("Телефон"))
                     temp.Add(product);
             }
+            return temp;
+        }
+
+        int comparer(Product a, Product b)
+        {
+            if (descending)
+            {
+                if (a.Price < b.Price) return -1;
+                if (a.Price == b.Price) return 0;
+                return 1;
+            }
+            else 
+            {
+                if (b.Price < a.Price) return -1;
+                if (b.Price == a.Price) return 0;
+                return 1;
+            }
+        }
+
+        public List<Product> SortByPrice()
+        {
+            var temp = new List<Product>(products);
+            temp.Sort(comparer);
+            descending = !descending;
             return temp;
         }
 

@@ -58,6 +58,7 @@
             this.listViewCatalog.TabIndex = 0;
             this.listViewCatalog.UseCompatibleStateImageBehavior = false;
             this.listViewCatalog.View = System.Windows.Forms.View.Details;
+            this.listViewCatalog.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listViewCatalog_ColumnClick);
             // 
             // columnHeader0
             // 

@@ -66,5 +66,10 @@ namespace ShopOnLineDeskTop
         {
             showProducts(filerFunctions[comboBoxFilters.SelectedIndex]);
         }
+
+        private void listViewCatalog_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            showProducts(catalog.SortByPrice);
+        }
     }
 }
