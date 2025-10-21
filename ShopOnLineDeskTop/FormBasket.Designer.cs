@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridBasket = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,16 +55,6 @@
             this.dataGridBasket.Size = new System.Drawing.Size(560, 150);
             this.dataGridBasket.TabIndex = 0;
             this.dataGridBasket.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridBasket_CellContentClick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(233, 281);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ColumnId
             // 
@@ -99,6 +88,7 @@
             this.ColumnAdd.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ColumnAdd.Text = "+";
             this.ColumnAdd.ToolTipText = "Увеличить количество";
+            this.ColumnAdd.UseColumnTextForButtonValue = true;
             this.ColumnAdd.Width = 30;
             // 
             // ColumnDecrease
@@ -108,6 +98,7 @@
             this.ColumnDecrease.ReadOnly = true;
             this.ColumnDecrease.Text = "-";
             this.ColumnDecrease.ToolTipText = "Уменьшить количество";
+            this.ColumnDecrease.UseColumnTextForButtonValue = true;
             this.ColumnDecrease.Width = 30;
             // 
             // FormBasket
@@ -115,20 +106,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 450);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridBasket);
             this.Name = "FormBasket";
             this.Text = "Корзина";
-            this.Load += new System.EventHandler(this.FormBasket_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBasket)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridBasket;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrice;

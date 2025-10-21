@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.listViewCatalog = new System.Windows.Forms.ListView();
+            this.columnHeader0 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -37,7 +38,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ToolStripMenuItemBasket = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.columnHeader0 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,10 @@
             this.listViewCatalog.UseCompatibleStateImageBehavior = false;
             this.listViewCatalog.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader0
+            // 
+            this.columnHeader0.Text = "артикул";
+            // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Название";
@@ -75,7 +79,7 @@
             // 
             this.buttonSelectProduct.Location = new System.Drawing.Point(38, 398);
             this.buttonSelectProduct.Name = "buttonSelectProduct";
-            this.buttonSelectProduct.Size = new System.Drawing.Size(282, 23);
+            this.buttonSelectProduct.Size = new System.Drawing.Size(336, 23);
             this.buttonSelectProduct.TabIndex = 1;
             this.buttonSelectProduct.Text = "Добавить в корзину";
             this.buttonSelectProduct.UseVisualStyleBackColor = true;
@@ -113,10 +117,6 @@
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.loginToolStripMenuItem.Text = "Войти";
-            // 
-            // columnHeader0
-            // 
-            this.columnHeader0.Text = "артикул";
             // 
             // FormCatalog
             // 

@@ -30,7 +30,13 @@ namespace ShopOnLineDeskTop
 
         public void Add(Product product)
         {
-            listBasketItem.Add(new BasketItem(product));
+            if (GetById(product.Id) != null) Increase(product.Id);
+            else listBasketItem.Add(new BasketItem(product));
+        }
+
+        public void Remove(BasketItem item)
+        {
+            listBasketItem.Remove(item);
         }
 
         public List<BasketItem> GetAll()
@@ -47,5 +53,25 @@ namespace ShopOnLineDeskTop
             return null;
         }
 
+        public void Increase(int id)
+        { 
+            BasketItem temp = GetById(id);
+            if (temp != null)
+            {
+                temp.count++;
+            }
+        }
+
+        public void Decrease(int id)
+        {
+            BasketItem temp = GetById(id);
+            if (temp != null)
+            {
+                if (temp.count > 1)
+                    temp.count--;
+                else 
+                    Remove(temp);
+            }
+        }
     }
 }

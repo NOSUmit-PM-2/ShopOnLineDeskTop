@@ -18,21 +18,16 @@ namespace ShopOnLineDeskTop
         {
             InitializeComponent();
             this.basket = basket;
+            RepaintDataGridView();
+        }
+
+        private void RepaintDataGridView()
+        {
+            dataGridBasket.Rows.Clear();
             foreach (var item in basket.GetAll())
             {
                 dataGridBasket.Rows.Add(item.ToArray());
             }
-        }
-
-        private void FormBasket_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Product p = new Product("sdfgdrqae", "ooo", 10);
-            dataGridBasket.Rows.Add(p.ToArray());
         }
 
         private void dataGridBasket_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -42,14 +37,26 @@ namespace ShopOnLineDeskTop
             { 
                 int row = e.RowIndex;
                 int productId = Convert.ToInt32(dataGridBasket.Rows[row].Cells[0].Value);
-                //product
-                //product.Increase()
+                //MessageBox.Show(productId.ToString());
+                if (productId > 0)
+                {
+                    basket.Increase(productId);
+                    RepaintDataGridView();
+                }
             }
-                
-            //if (] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            // уменьшить количество
+            if (e.ColumnIndex == 5)
             {
-                MessageBox.Show("");
+                int row = e.RowIndex;
+                int productId = Convert.ToInt32(dataGridBasket.Rows[row].Cells[0].Value);
+                if (productId > 0)
+                {
+                    basket.Decrease(productId);
+                    RepaintDataGridView();
+                }
             }
+
+
         }
     }
 }

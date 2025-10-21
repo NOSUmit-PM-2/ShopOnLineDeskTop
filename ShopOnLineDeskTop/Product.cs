@@ -17,7 +17,7 @@ namespace ShopOnLineDeskTop
 
         public Product(string name, string description, decimal price)
         {
-            Id = countProduct++;
+            Id = ++countProduct;
             this.Name = name;
             this.Description = description;
             Price = price;
