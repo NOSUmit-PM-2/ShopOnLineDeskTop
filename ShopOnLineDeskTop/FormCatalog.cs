@@ -15,6 +15,8 @@ namespace ShopOnLineDeskTop
         Basket basket = new Basket();
         Catalog catalog = new Catalog();
 
+        delegate List<Product> FilerFunction();
+
         public FormCatalog()
         {
             InitializeComponent();
@@ -44,6 +46,30 @@ namespace ShopOnLineDeskTop
         {
             FormBasket basketForm = new FormBasket(basket);
             basketForm.ShowDialog();
+        }
+
+        void showProducts(List<Product> products)
+        {
+
+            listViewCatalog.Items.Clear();
+            for (int i = 0; i < products.Count; i++)
+            {
+                listViewCatalog.Items.Add(new ListViewItem(products[i].ToArray()));
+            }
+        }
+
+        private void comboBoxFilters_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Product> temp = new List<Product>();
+            FilerFunction filerFunctionAll = catalog.GetAll;
+            FilerFunction filerFunctionLowPrice = catalog.GetLowPrice;
+
+            switch (comboBoxFilters.SelectedIndex)
+            {
+                case 0: temp = filerFunctionAll(); break;
+                case 1: temp = filerFunctionLowPrice(); break;
+            }
+            showProducts(temp);
         }
     }
 }

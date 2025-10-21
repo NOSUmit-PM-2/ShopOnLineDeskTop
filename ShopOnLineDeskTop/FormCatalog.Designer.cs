@@ -38,6 +38,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ToolStripMenuItemBasket = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxFilters = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +52,7 @@
             this.columnHeader3});
             this.listViewCatalog.GridLines = true;
             this.listViewCatalog.HideSelection = false;
-            this.listViewCatalog.Location = new System.Drawing.Point(38, 75);
+            this.listViewCatalog.Location = new System.Drawing.Point(45, 179);
             this.listViewCatalog.Name = "listViewCatalog";
             this.listViewCatalog.Size = new System.Drawing.Size(336, 306);
             this.listViewCatalog.TabIndex = 0;
@@ -77,7 +79,7 @@
             // 
             // buttonSelectProduct
             // 
-            this.buttonSelectProduct.Location = new System.Drawing.Point(38, 398);
+            this.buttonSelectProduct.Location = new System.Drawing.Point(45, 502);
             this.buttonSelectProduct.Name = "buttonSelectProduct";
             this.buttonSelectProduct.Size = new System.Drawing.Size(336, 23);
             this.buttonSelectProduct.TabIndex = 1;
@@ -88,7 +90,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 43);
+            this.label1.Location = new System.Drawing.Point(42, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 13);
             this.label1.TabIndex = 3;
@@ -118,11 +120,35 @@
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.loginToolStripMenuItem.Text = "Войти";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(42, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Фильтр";
+            // 
+            // comboBoxFilters
+            // 
+            this.comboBoxFilters.FormattingEnabled = true;
+            this.comboBoxFilters.Items.AddRange(new object[] {
+            "Все",
+            "Цена ниже 10000",
+            "Телефоны"});
+            this.comboBoxFilters.Location = new System.Drawing.Point(128, 57);
+            this.comboBoxFilters.Name = "comboBoxFilters";
+            this.comboBoxFilters.Size = new System.Drawing.Size(253, 21);
+            this.comboBoxFilters.TabIndex = 6;
+            this.comboBoxFilters.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilters_SelectedIndexChanged);
+            // 
             // FormCatalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 450);
+            this.ClientSize = new System.Drawing.Size(439, 575);
+            this.Controls.Add(this.comboBoxFilters);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSelectProduct);
             this.Controls.Add(this.listViewCatalog);
@@ -150,6 +176,8 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemBasket;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader columnHeader0;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBoxFilters;
     }
 }
 

@@ -28,6 +28,17 @@ namespace ShopOnLineDeskTop
             return new List<Product>(products);
         }
 
+        public List<Product> GetLowPrice()
+        { 
+            List<Product> temp = new List<Product>();
+            foreach (Product product in products)
+            {
+                if (product.Price < 10000) 
+                temp.Add(product);
+            }
+            return temp;
+        }
+
         public Product GetById(int id)
             {
             foreach (var product in products)
