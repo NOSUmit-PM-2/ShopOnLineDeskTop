@@ -16,6 +16,7 @@ namespace ShopOnLineDeskTop
         Catalog catalog = new Catalog();
 
         delegate List<Product> FilerFunction();
+        FilerFunction[] filerFunctions = null;
 
         public FormCatalog()
         {
@@ -25,6 +26,9 @@ namespace ShopOnLineDeskTop
         private void FormCatalog_Load(object sender, EventArgs e)
         {
             catalog.InitializeConstant();
+            // создать список фильтров
+            filerFunctions = new FilerFunction[]{catalog.GetAll, catalog.GetLowPrice };
+
             List<Product> temp = catalog.GetAll();
             //foreach (var product in catalog.GetAll())
             //    listViewCatalog.Items.Add(new ListViewItem(product.ToArray()));
@@ -48,9 +52,9 @@ namespace ShopOnLineDeskTop
             basketForm.ShowDialog();
         }
 
-        void showProducts(List<Product> products)
+        void showProducts(FilerFunction filerFunction)
         {
-
+            var products = filerFunction();
             listViewCatalog.Items.Clear();
             for (int i = 0; i < products.Count; i++)
             {
@@ -60,11 +64,7 @@ namespace ShopOnLineDeskTop
 
         private void comboBoxFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FilerFunction[] filerFunctions = {catalog.GetAll, catalog.GetLowPrice };
-
-            List<Product>  temp = filerFunctions[comboBoxFilters.SelectedIndex]();
-
-            showProducts(temp);
+            showProducts(filerFunctions[comboBoxFilters.SelectedIndex]);
         }
     }
 }
